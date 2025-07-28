@@ -7,7 +7,6 @@ With GraphNet, users can:
 2. Easily conduct regression tests on existing compilers.
 3. Train AI‑for‑Systems models to automatically generate compiler optimization passes.
 
-
 Dataset Construction Constraints：
 1. Dynamic graphs must execute correctly.
 2. Each computation graph should include a standardized method for measuring performance.
