@@ -1,18 +1,9 @@
 name: Validate-GPU
 
 on:
-  workflow_call:
-    inputs:
-      docker_build_image:
-        type: string
-        required: true
-      clone_dir:
-        type: string
-        required: false
-        default: 'Paddle'
-      can-skip:
-        type: string
-        required: false
+  pull_request:
+    branches:
+      - develop
 
 env:
   PR_ID: ${{ github.event.pull_request.number }}
@@ -28,8 +19,8 @@ defaults:
     shell: bash
 
 jobs:
-  cinn:
-    name: CINN
+  validate:
+    name: Validate
     if: ${{ inputs.can-skip != 'true' }}
     runs-on:
       group: BD_BJ-V100
